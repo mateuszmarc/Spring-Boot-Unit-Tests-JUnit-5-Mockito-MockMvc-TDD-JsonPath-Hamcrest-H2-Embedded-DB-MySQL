@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 //@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
-@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
+//@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
 class DemoUtilsTest {
 
     private DemoUtils demoUtils;
@@ -34,7 +34,7 @@ class DemoUtilsTest {
 
 
     @Test
-//    @DisplayName("Test for checking adding calculation")
+    @DisplayName("Test for checking adding calculation")
     void testAdd() {
 //        System.out.println("Running test: testAdd");
 //        give
@@ -51,7 +51,7 @@ class DemoUtilsTest {
     }
 
     @Test
-//    @DisplayName("Check for the null object")
+    @DisplayName("Check for the null object")
     void testCheckNull() {
 //        System.out.println("Running test: testCheckNull");
 
@@ -61,11 +61,47 @@ class DemoUtilsTest {
     }
 
     @Test
-//    @DisplayName("Check for not null object")
+    @DisplayName("Check for not null object")
     void testCheckNotNull() {
 //        System.out.println("Running test: testCheckNotNull");
         Object toTest = new Object();
 
         assertNotNull(demoUtils.checkNull(toTest), "This object should not benull");
+    }
+
+    @Test
+    @DisplayName("Check objects for the same")
+    void testCheckForSame() {
+        String academy = demoUtils.getAcademy();
+        String academyRepeat = demoUtils.getAcademyDuplicate();
+
+        assertSame(academy, academyRepeat, "Should refer to the same object");
+    }
+
+//    @Test
+//    @DisplayName("Check for not the same")
+//    void testCheckForNotSame() {
+//        String academy = demoUtils.getAcademy();
+//        String academyRepeat = demoUtils.getAcademyDuplicate();
+//
+//        assertNotSame(academy, academyRepeat, "Should refer to different objects");
+//    }
+
+    @Test
+    @DisplayName("Test true for isGreater")
+    void testTrueIsGreater() {
+        int n1 = 4;
+        int n2 = 3;
+
+        assertTrue(demoUtils.isGreater(n1, n2), "Should return true");
+    }
+
+    @Test
+    @DisplayName("Test false for isGreater")
+    void testFalseIsGreater() {
+        int n1 = 3;
+        int n2 = 4;
+
+        assertFalse(demoUtils.isGreater(n1, n2), "Should return false");
     }
 }
