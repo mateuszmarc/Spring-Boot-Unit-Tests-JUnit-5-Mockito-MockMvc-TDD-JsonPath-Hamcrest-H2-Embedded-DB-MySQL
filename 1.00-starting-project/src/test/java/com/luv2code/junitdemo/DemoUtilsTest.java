@@ -32,6 +32,7 @@ class DemoUtilsTest {
 
 
     @Test
+    @DisplayName("Test for checking adding calculation")
     void testAdd() {
         System.out.println("Running test: testAdd");
 //        give
@@ -48,6 +49,7 @@ class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Check for the null object")
     void testCheckNull() {
         System.out.println("Running test: testCheckNull");
 
@@ -57,6 +59,7 @@ class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Check for not null object")
     void testCheckNotNull() {
         System.out.println("Running test: testCheckNotNull");
         Object toTest = new Object();
