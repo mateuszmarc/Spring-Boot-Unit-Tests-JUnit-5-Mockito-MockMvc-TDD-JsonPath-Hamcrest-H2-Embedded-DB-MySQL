@@ -1,8 +1,6 @@
 package com.luv2code.junitdemo;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -11,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 //@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
 //@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
+@TestMethodOrder(MethodOrderer.DisplayName.class)
 class DemoUtilsTest {
 
     private DemoUtils demoUtils;
