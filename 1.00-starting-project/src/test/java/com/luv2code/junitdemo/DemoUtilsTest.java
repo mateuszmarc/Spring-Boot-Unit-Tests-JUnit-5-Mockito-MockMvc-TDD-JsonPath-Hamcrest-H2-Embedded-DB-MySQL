@@ -150,6 +150,16 @@ class DemoUtilsTest {
     void testTimeout() {
         assertTimeoutPreemptively(Duration.ofSeconds(3), () -> demoUtils.checkTimeout(), "Method should execute in 3 seconds");
     }
+
+    @Test
+    void testMultiply() {
+        int a = 2;
+        int b = 4;
+        int expectedResult = 8;
+
+        assertEquals(expectedResult, demoUtils.multiply(a, b), "Should be %d".formatted(expectedResult));
+
+    }
 }
 
 
